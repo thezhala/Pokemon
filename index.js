@@ -61,13 +61,7 @@ function startGame(e) {
 
     }
 
-    if(player1Score === 5 && player1Score > player2Score) {
-        alert("USER WIN!!!")
-        resetGame()
-    } else if (player2Score === 5 && player2Score > player1Score) {
-      alert("COMP WIN!!!");
-      resetGame();
-    }
+    compareResults(player1Score, player2Score);
     
     // console.log("---------------------")
     // console.log("user",userAttack)
@@ -75,6 +69,15 @@ function startGame(e) {
     // console.log("---------------------")
 }
 
+function compareResults(score1,score2) {
+    if(score1 === 5 && score1 > score2) {
+        alert("USER WIN!!!")
+        resetGame()
+    } else if (score2 === 5 && score2 > score1) {
+      alert("COMP WIN!!!");
+      resetGame()
+    }
 
+}
 
 window.onkeydown = startGame
